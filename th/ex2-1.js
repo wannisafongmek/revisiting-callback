@@ -8,7 +8,16 @@
 */
 
 // Start Coding Here
+// Callback functions สำหรับแต่ละ Action
+const postCreated = () => "แจ้งเตือน: โพสต์ของคุณถูกสร้างสำเร็จ!";
+const postLiked = () => "👍 แจ้งเตือน: มีคนมากดไลค์โพสต์ของคุณ!";
+const postCommented = () => "💬 แจ้งเตือน: มีคนมาคอมเมนต์ในโพสต์ของคุณ!";
+const postShared = () => "🔄 แจ้งเตือน: มีคนแชร์โพสต์ของคุณ!";
 
+// Higher-Order Function ที่รับ callback เข้ามาเรียกใช้งาน
+const sendNotification = (callback) => {
+  return `🔔 ${callback()}`;
+};
 
 // เมื่อ function นี้ทำงานจะเห็นผลลัพธ์ดังนี้
 console.log(sendNotification(postCreated));   // 📝 แจ้งเตือน: โพสต์ของคุณถูกสร้างสำเร็จ!
